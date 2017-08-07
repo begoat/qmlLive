@@ -1,4 +1,4 @@
 build
 .DS_store
-*.user
+CMakeLists.txt.user
 .vscode
