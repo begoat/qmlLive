@@ -31,11 +31,13 @@ void WatchReload::reloadApp(const QString &path)
         qDebug() << "file changes";
 
 //        this->engine->load(QUrl(QLatin1String("/Users/william/QT-project/qmlLive/main.qml")));
-        QObject *loader = this->engine->rootObjects().first()->findChild<QObject*>("loader");
+        //QObject *loader = this->engine->rootObjects().first()->findChild<QObject*>("loader");
+        QObject *loader = this->engine->rootObjects().first();
+
         if (loader){
             qDebug() << "locate loader, start reloading";
             //loader->setProperty("source","");
-            //loader->setProperty("source","file:/Users/william/QT-project/qmlLive/main.qml");
+            //loader->setProperty("source","file:/Users/william/QT-project/qmlLive/MainWindow.qml");
             this->engine->clearComponentCache();
             loader->setProperty("active",false);
             loader->setProperty("active",true);
@@ -43,5 +45,6 @@ void WatchReload::reloadApp(const QString &path)
         }else {
             qDebug() << "not find.";
         }
+
 
 }

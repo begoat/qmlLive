@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     cout << "Watching dir list:    "<< list[0].toUtf8().constData() <<endl;
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QLatin1String("qrc:/Loader.qml")));
+    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
      WatchReload Reload(&engine);
      QObject::connect(&watchdog,&QFileSystemWatcher::directoryChanged,&Reload,&WatchReload::reloadApp);
