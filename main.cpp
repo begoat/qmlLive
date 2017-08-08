@@ -9,8 +9,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    qputenv("QML_DISABLE_DISK_CACHE", "1"); // disable QML cache to prevent the associated bugs from manifesting
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+
     QFileSystemWatcher watchdog;
     QString str = "/Users/william/QT-project/qmlLive/";
     if (!watchdog.addPath(str) ){
@@ -20,20 +22,10 @@ int main(int argc, char *argv[])
 
     cout << "Watching dir list:    "<< list[0].toUtf8().constData() <<endl;
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
+    engine.load(QUrl(QLatin1String("qrc:/Loader.qml")));
 
      WatchReload Reload(&engine);
      QObject::connect(&watchdog,&QFileSystemWatcher::directoryChanged,&Reload,&WatchReload::reloadApp);
-
-
-    // Step 1: get access to the root object
-    qDebug() << "Demo debug";
-
-    // QObject *qmlObject = rootObject->findChild<QObject*>("mainWindow");
-
-
-
-
 
 
     if (engine.rootObjects().isEmpty())

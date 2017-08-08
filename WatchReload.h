@@ -9,7 +9,7 @@ class WatchReload: public QObject
 public:
   WatchReload(QQmlApplicationEngine *engine);
 public slots:
-  void reloadApp();
+  void reloadApp(const QString &path);
 private:
   QQmlApplicationEngine *engine;
   //QString realPath;
