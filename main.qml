@@ -6,7 +6,9 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("Hello Worsssld")
+    objectName: "mainWindow"
+
     SwipeView {
         id: swipeView
         anchors.fill: parent
