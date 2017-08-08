@@ -2,31 +2,32 @@
 #include <QQmlApplicationEngine>
 #include <QFileSystemWatcher>
 #include <QStringList>
-#include <iostream>
 #include <QDebug>
 #include "WatchReload.h"
-using namespace std;
 
 int main(int argc, char *argv[])
 {
-    qputenv("QML_DISABLE_DISK_CACHE", "1"); // disable QML cache to prevent the associated bugs from manifesting
+    // disable QML cache to prevent the associated bugs from manifesting
+    qputenv("QML_DISABLE_DISK_CACHE", "1");
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
-    QFileSystemWatcher watchdog;
-    QString str = "/Users/william/QT-project/qmlLive/";
-    if (!watchdog.addPath(str) ){
-        cout << "Error: Cannot not watch" << endl;
+    // monitor the resource dir and output the dirname
+    QFileSystemWatcher watcher;
+    QString str = "/Users/william/QT-project/qmlLive/"; // later maybe can be passed by XXX.in config_file by CMakeLists.txt
+    if (!watcher.addPath(str) ){
+        qDebug() << "watch path not found";
     }
-    QStringList list = watchdog.directories();
+    QStringList list = watcher.directories();
+    qDebug() << "Watching dir list:    "<< list[0].toUtf8().constData();
 
-    cout << "Watching dir list:    "<< list[0].toUtf8().constData() <<endl;
     QQmlApplicationEngine engine;
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
-     WatchReload Reload(&engine);
-     QObject::connect(&watchdog,&QFileSystemWatcher::directoryChanged,&Reload,&WatchReload::reloadApp);
-
+    // a function as a slot to receive and react to the signal
+    WatchReload Reload(&engine);
+    QObject::connect(&watcher,&QFileSystemWatcher::directoryChanged,&Reload,&WatchReload::reloadApp);
 
     if (engine.rootObjects().isEmpty())
         return -1;

@@ -5,6 +5,6 @@
         <file>Page1Form.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>main.qml</file>
-        <file>TextSample.qml</file>
+        <file>TestSample.qml</file>
     </qresource>
 </RCC>

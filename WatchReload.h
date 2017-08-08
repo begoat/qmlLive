@@ -1,6 +1,5 @@
 #ifndef WatchReload_H
 #define WatchReload_H
-#include <QObject>
 #include <QQmlApplicationEngine>
 
 class WatchReload: public QObject
@@ -9,10 +8,10 @@ class WatchReload: public QObject
 public:
   WatchReload(QQmlApplicationEngine *engine);
 public slots:
-  void reloadApp(const QString &path);
+  void reloadApp();
 private:
   QQmlApplicationEngine *engine;
-  //QString realPath;
+  QObject *firstrootobj;
 };
 
 #endif

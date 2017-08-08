@@ -6,7 +6,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("Hello   World")
     objectName: "mainWindow"
 
     SwipeView {
@@ -23,7 +23,7 @@ ApplicationWindow {
                 text: qsTr("Second page")
                 anchors.centerIn: parent
             }
-            TextSample {
+            TestSample {
 
             }
         }
@@ -33,7 +33,7 @@ ApplicationWindow {
         id: tabBar
         currentIndex: swipeView.currentIndex
         TabButton {
-            text: qsTr("First")
+            text: qsTr("First111")
         }
         TabButton {
             text: qsTr("Second")
