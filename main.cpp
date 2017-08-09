@@ -3,7 +3,7 @@
 #include <QFileSystemWatcher>
 #include <QStringList>
 #include <QDebug>
-#include "WatchReload.h"
+#include "src/WatchAndReload/WatchReload.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     // monitor the resource dir and output the dirname
     QFileSystemWatcher watcher;
-    QString str = "/Users/william/QT-project/qmlLive/"; // later maybe can be passed by XXX.in config_file by CMakeLists.txt
+    QString str = "/Users/william/QT-project/qmlLive/script/QML/"; // later maybe can be passed by XXX.in config_file by CMakeLists.txt
     if (!watcher.addPath(str) ){
         qDebug() << "watch path not found";
     }
