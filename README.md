@@ -20,3 +20,4 @@ and will it automatically disappear in release mode (no)
 - [ ] keep the window at the same position
 - [X] bugs: syntax error will lead to the program down.
 - [ ] questions: how about add some image file and use it in the component, you add it to the qrc but rcc didn't compile it until its been re-build
+
