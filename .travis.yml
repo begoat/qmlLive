@@ -11,11 +11,11 @@ matrix:
       compiler: clang
       osx_image: xcode8.3
 
-#    - os: linux
-#      dist: trusty
-#      sudo: required
-#      env: CONFIG=Release
-#      compiler: gcc
+    - os: linux
+      dist: trusty
+      sudo: required
+      env: CONFIG=Release
+      compiler: gcc
     
 
 
