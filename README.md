@@ -9,7 +9,7 @@
 
     From C++ aspect, monitor a directory's change by using the QT lib called QSystemFileWathcer. After file changed, a signal emitted and use a function in a class to receive it called reloadApp().
 
-    In the function, just update the Loader's source and That's ok.
+    In the function, just update the Loader's source and That's ok. If there is syntax error in the file, redirect it to a ErrorPage to prevent the app from exiting.
 
 ## To-do:
 - [X] re-structure and delete all not related file content and especially dir
@@ -18,5 +18,5 @@
 and will it automatically disappear in release mode (no)
 - [X] the problem of path. currently we specify the aboulute path. Can it be substituted by cMakeLists.txt
 - [ ] keep the window at the same position
-- [ ] bugs: syntax error will lead to the program down.
+- [X] bugs: syntax error will lead to the program down.
 - [ ] questions: how about add some image file and use it in the component, you add it to the qrc but rcc didn't compile it until its been re-build
