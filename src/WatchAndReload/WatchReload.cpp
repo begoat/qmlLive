@@ -20,10 +20,9 @@ void WatchReload::reloadApp()
 
         QString path = Watch_Dir_Path;
         path = path.prepend("file:").append("/MainWindow.qml");
-
+        this->firstrootobj->setProperty("active",false);
         this->firstrootobj->setProperty("source",path);
-        //this->firstrootobj->setProperty("active",false);
-        //this->firstrootobj->setProperty("active",true);
+        this->firstrootobj->setProperty("active",true);
     }else {
         qDebug() << "not find the first root obj";
     }
