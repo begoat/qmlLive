@@ -16,5 +16,7 @@
 - [X] set the function only enabled in debug mode (no need because it will reduce the functionality)
 - [X] search what's qDebug()(can display QString or something else), why it can be executed after engine.load,(all the code except cout can be executed immediately)
 and will it automatically disappear in release mode (no)
-- [ ] the problem of path. currently we specify the aboulute path. Can it be substituted by cMakeLists.txt
+- [X] the problem of path. currently we specify the aboulute path. Can it be substituted by cMakeLists.txt
 - [ ] keep the window at the same position
+- [ ] bugs: syntax error will lead to the program down.
+- [ ] questions: how about add some image file and use it in the component, you add it to the qrc but rcc didn't compile it until its been re-build
