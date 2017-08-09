@@ -6,8 +6,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello  World")
-    objectName: "mainWindow"
+    title: qsTr("你好")
 
     SwipeView {
         id: swipeView
@@ -20,14 +19,14 @@ ApplicationWindow {
 
         Page {
             Label {
-                text: qsTr("Second page")
+                text: qsTr("Second page/第二页")
                 anchors.centerIn: parent
             }
             TestSample {
 
             }
             TestTwo {
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenter:  parent.horizontalCenter
             }
         }
     }

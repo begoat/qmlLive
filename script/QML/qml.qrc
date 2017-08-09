@@ -7,5 +7,6 @@
         <file>main.qml</file>
         <file>TestSample.qml</file>
         <file>TestTwo.qml</file>
+        <file>ErrorPage.qml</file>
     </qresource>
 </RCC>
