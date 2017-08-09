@@ -3,7 +3,7 @@
 #include <QFileSystemWatcher>
 #include <QStringList>
 #include <QDebug>
-#include "src/WatchAndReload/WatchReload.h"
+#include "WatchAndReload/WatchReload.h"
 
 int main(int argc, char *argv[])
 {
