@@ -1,5 +1,8 @@
 #include <QDebug>
 #include "WatchReload.h"
+#include "WatchDirPath.h"
+#include <iostream>
+using namespace std;
 
 WatchReload::WatchReload(QQmlApplicationEngine *engine)
 {
@@ -12,12 +15,15 @@ void WatchReload::reloadApp()
     qDebug() << "file changes detected";
     if (this->firstrootobj){
         qDebug() << "start reloading";
-        // leave them here, later if maybe used to solve the problem of absolute path;
-        //loader->setProperty("source","");
-        //loader->setProperty("source","file:/Users/william/QT-project/qmlLive/MainWindow.qml");
+        this->firstrootobj->setProperty("source","");
         this->engine->clearComponentCache();
-        this->firstrootobj->setProperty("active",false);
-        this->firstrootobj->setProperty("active",true);
+
+        QString path = Watch_Dir_Path;
+        path = path.prepend("file:").append("/MainWindow.qml");
+
+        this->firstrootobj->setProperty("source",path);
+        //this->firstrootobj->setProperty("active",false);
+        //this->firstrootobj->setProperty("active",true);
     }else {
         qDebug() << "not find the first root obj";
     }

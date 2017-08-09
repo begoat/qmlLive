@@ -6,5 +6,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>main.qml</file>
         <file>TestSample.qml</file>
+        <file>TestTwo.qml</file>
     </qresource>
 </RCC>

@@ -26,6 +26,9 @@ ApplicationWindow {
             TestSample {
 
             }
+            TestTwo {
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
         }
     }
 
@@ -33,10 +36,10 @@ ApplicationWindow {
         id: tabBar
         currentIndex: swipeView.currentIndex
         TabButton {
-            text: qsTr("First")
+            text: qsTr("First111")
         }
         TabButton {
-            text: qsTr("Second")
+            text: qsTr("Second222")
         }
     }
 }

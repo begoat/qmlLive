@@ -4,6 +4,9 @@
 #include <QStringList>
 #include <QDebug>
 #include "WatchAndReload/WatchReload.h"
+#include "WatchDirPath.h"
+#include <iostream>
+using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -15,11 +18,13 @@ int main(int argc, char *argv[])
 
     // monitor the resource dir and output the dirname
     QFileSystemWatcher watcher;
-    QString str = "/Users/william/QT-project/qmlLive/script/QML/"; // later maybe can be passed by XXX.in config_file by CMakeLists.txt
+
+    QString str = Watch_Dir_Path; // use Cmakelist.txt to pass a macro to this file
     if (!watcher.addPath(str) ){
         qDebug() << "watch path not found";
     }
     QStringList list = watcher.directories();
+    // --------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> do something such like except.
     qDebug() << "Watching dir list:    "<< list[0].toUtf8().constData();
 
     QQmlApplicationEngine engine;
