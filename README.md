@@ -1,4 +1,6 @@
 # qmlLive
+[![Build Status](https://travis-ci.org/begoat/qmlLive.svg?branch=master)](https://travis-ci.org/begoat/qmlLive)
+
 ## Description:
     Refresh your apps automactically when there are changes on QML file.
     No need to rebuild the whole project in debug mode.
