@@ -17,3 +17,4 @@
 - [X] search what's qDebug()(can display QString or something else), why it can be executed after engine.load,(all the code except cout can be executed immediately)
 and will it automatically disappear in release mode (no)
 - [ ] the problem of path. currently we specify the aboulute path. Can it be substituted by cMakeLists.txt
+- [ ] keep the window at the same position
