@@ -9,7 +9,7 @@
 
     From C++ aspect, monitor a directory's change by using the QT lib called QSystemFileWathcer. After file changed, a signal emitted and use a function in a class to receive it called reloadApp().
 
-    In the function, just update the source and That's ok.
+    In the function, just update the Loader's source and That's ok.
 
 ## To-do:
 - [X] re-structure and delete all not related file content and especially dir
