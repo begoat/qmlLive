@@ -6,7 +6,7 @@
 #include "WatchAndReload/WatchReload.h"
 #include "WatchDirPath.h"
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -23,10 +23,11 @@ int main(int argc, char *argv[])
     if (!watcher.addPath(str) ){
         qDebug() << "watch path not found";
     }
-    QStringList list = watcher.directories();
-    // --------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> do something such like except.
-    qDebug() << "Watching dir list:    "<< list[0].toUtf8().constData();
-
+    else {
+        QStringList list = watcher.directories();
+        // --------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> do something such like except.
+        qDebug() << "Watching dir list:    "<< list[0].toUtf8().constData();
+    }
     QQmlApplicationEngine engine;
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
