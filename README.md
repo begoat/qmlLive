@@ -13,6 +13,10 @@
 
     In the function, just update the Loader's source and That's ok. If there is syntax error in the file, redirect it to a ErrorPage to prevent the app from exiting.
 
+    Later, considering more flexibility, we decide to use two Loader in the ApplicationWindow to load two component.
+
+    Use Binding and the currentIndex and the tabbar and swipeview can communicate each other.
+
 ## To-do:
 - [X] re-structure and delete all not related file content and especially dir
 - [X] set the function only enabled in debug mode (no need because it will reduce the functionality)
