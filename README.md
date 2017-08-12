@@ -31,4 +31,4 @@ and will it automatically disappear in release mode (no)
 https://github.com/Mogara/GameHall
 
 we will focus on develop this project later.
- Welcome to watch and follow us. 
+ Welcome to watch and join us. 
